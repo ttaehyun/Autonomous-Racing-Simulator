@@ -8,7 +8,20 @@
 * **ROS 2:** [Kilted]
 * **Simulator:** Gazebo Sim (Ionic)
 * **Dependencies:** `ros_gz_bridge`, `xacro`
----
+
+## 📡 장착된 센서 및 토픽 (Sensors & Topics)
+해당 차량(`car1` 기준)은 다음과 같은 3D 센서 데이터를 실시간으로 발행합니다.
+
+| 센서 종류 (Sensor) | 토픽 이름 (Topic) | 메시지 타입 (Message Type) |
+| :--- | :--- | :--- |
+| **3D LiDAR** (Point Cloud) | `/car1/scan/points` | `sensor_msgs/msg/PointCloud2` |
+| **Camera** (RGB) | `/car1/camera/image` | `sensor_msgs/msg/Image` |
+| **GPS** (NavSatFix) | `/car1/gps/fix` | `sensor_msgs/msg/NavSatFix` |
+
+> 💡 **Tip:** RViz2를 실행하여 위 토픽들을 시각화할 수 있습니다. (`Fixed Frame: car1` 권장)
+
+----
+
 ## ⚙️ 사전 준비 및 빌드 (Installation & Build)
 - **ubuntu 24.04 사용자 환경 구성 먼저 빌드 후 진행**
 - **docker사용자는 환경 구성 건너뛰어도 됨**
@@ -98,10 +111,20 @@ docker run -it --privileged \
     --env=LOCAL_USER_ID="$(id -u)" \
     --hostname $(hostname) \
     --network host \
-    --name ubuntu_24_04 th:24.04 bash
+    --name ubuntu_24_04 rth0824/autonomous-racing-simulator:ver1.0 bash
 ```
 
 - **docker 실행 후 위 1번 부터 진행**
+
+## docker exit 후 다음 재실행 시
+{container name}에 자기의 컨테이너 이름 넣어주기
+```bash
+docker start {container name}
+docker exec -it -u user {container name} /bin/bash
+```
+위 명령어로 진행하면 됨
+
+----
 ## 🛠️ Troubleshooting (자주 묻는 질문/오류 해결)
 🚨 libEGL warning 또는 센서 토픽이 출력되지 않을 때
 

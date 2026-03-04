@@ -1,5 +1,5 @@
 # 🏎️ Clothoid-R Autonomous Driving Simulator
-![Autonomous Racing Simulator](https://github.com/ttaehyun/Autonomous-Racing-Simulator/tree/main/image/background.png)
+![Autonomous Racing Simulator](https://github.com/ttaehyun/Autonomous-Racing-Simulator/tree/main/image/background.png](https://github.com/ttaehyun/Autonomous-Racing-Simulator/blob/main/image/background.png)
 
 본 프로젝트는 자율주행 알고리즘(Pure Pursuit, MPC, Stanley 등) 및 센서 퓨전 테스트를 위한 ROS 2 - Gazebo 기반의 차량 시뮬레이션 환경입니다.
 

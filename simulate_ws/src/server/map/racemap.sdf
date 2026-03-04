@@ -57,14 +57,14 @@
         <collision name='collision'>
           <geometry>
             <mesh>
-              <uri>file:///home/th/Documents/racemap/Exports/race.gltf</uri>
+              <uri>map1.gltf</uri>
             </mesh>
           </geometry>
         </collision>
         <visual name='visual'>
           <geometry>
             <mesh>
-              <uri>file:///home/th/Documents/racemap/Exports/race.gltf</uri>
+              <uri>map1.gltf</uri>
             </mesh>
           </geometry>
         </visual>

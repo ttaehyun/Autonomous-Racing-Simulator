@@ -14,7 +14,7 @@
         <visual>
             <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
             <geometry>
-                <mesh filename="/home/th/simulate_ws/src/server/mesh/body.stl" scale="1.0 1.0 1.0"/>
+                <mesh filename="/home/th/Autonomous-Racing-Simulator/simulate_ws/src/server/mesh/body.stl" scale="1.0 1.0 1.0"/>
             </geometry>
             <material name="whiteblue">
                 <color rgba="0.3 0.3 0.8 1"/>
@@ -23,7 +23,7 @@
         <collision>
             <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
             <geometry>
-                <mesh filename="/home/th/simulate_ws/src/server/mesh/body.stl" scale="1.0 1.0 1.0"/>
+                <mesh filename="/home/th/Autonomous-Racing-Simulator/simulate_ws/src/server/mesh/body.stl" scale="1.0 1.0 1.0"/>
             </geometry>
         </collision>
         <inertial>
@@ -38,7 +38,7 @@
         <visual>
             <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
             <geometry>
-                <mesh filename="/home/th/simulate_ws/src/server/mesh/left.stl" scale="1.0 1.0 1.0"/>
+                <mesh filename="/home/th/Autonomous-Racing-Simulator/simulate_ws/src/server/mesh/left.stl" scale="1.0 1.0 1.0"/>
             </geometry>
             <material name="black">
                 <color rgba="0.1 0.1 0.1 1"/>
@@ -62,7 +62,7 @@
         <visual>
             <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
             <geometry>
-                <mesh filename="/home/th/simulate_ws/src/server/mesh/right.stl" scale="1.0 1.0 1.0"/>
+                <mesh filename="/home/th/Autonomous-Racing-Simulator/simulate_ws/src/server/mesh/right.stl" scale="1.0 1.0 1.0"/>
             </geometry>
             <material name="black">
                 <color rgba="0.1 0.1 0.1 1"/>
@@ -86,7 +86,7 @@
         <visual>
             <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
             <geometry>
-                <mesh filename="/home/th/simulate_ws/src/server/mesh/left.stl" scale="1.0 1.0 1.0"/>
+                <mesh filename="/home/th/Autonomous-Racing-Simulator/simulate_ws/src/server/mesh/left.stl" scale="1.0 1.0 1.0"/>
             </geometry>
             <material name="black">
                 <color rgba="0.1 0.1 0.1 1"/>
@@ -110,7 +110,7 @@
         <visual>
             <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
             <geometry>
-                <mesh filename="/home/th/simulate_ws/src/server/mesh/right.stl" scale="1.0 1.0 1.0"/>
+                <mesh filename="/home/th/Autonomous-Racing-Simulator/simulate_ws/src/server/mesh/right.stl" scale="1.0 1.0 1.0"/>
             </geometry>
             <material name="black">
                 <color rgba="0.1 0.1 0.1 1"/>

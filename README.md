@@ -52,7 +52,9 @@ sudo apt install ros-kilted-ros-gz
 git clone https://github.com/ttaehyun/Autonomous-Racing-Simulator.git
 ```
 #### 2. Colcon build
+**ROS 불러오기 꼭 하기**
 ```bash
+source /opt/ros/kilted/setup.bash
 cd ~/Autonomous-Racing-Simulator/simulate_ws 
 ```
 ```bash

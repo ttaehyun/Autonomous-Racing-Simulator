@@ -4,7 +4,7 @@
 본 프로젝트는 자율주행 알고리즘(Pure Pursuit, MPC, Stanley 등) 및 센서 퓨전 테스트를 위한 ROS 2 - Gazebo 기반의 차량 시뮬레이션 환경입니다.
 
 ## 🖥️ 운영 환경 (Operating Environment)
-* **OS:** Ubuntu 24.04 LTS (또는 22.04 LTS)
+* **OS:** Ubuntu 24.04 LTS
 * **ROS 2:** [Kilted]
 * **Simulator:** Gazebo Sim (Ionic)
 * **Dependencies:** `ros_gz_bridge`, `xacro`

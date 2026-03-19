@@ -137,28 +137,6 @@
         <inertial><mass value="0.1"/><inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001"/></inertial>
     </link>
 
-    <link name="lidar_link">
-        <visual>
-            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
-            <geometry>
-                <cylinder radius="0.05165" length="0.0717"/>
-            </geometry>
-            <material name="Gray">
-                <color rgba="0.169 0.169 0.169 1"/>
-            </material>
-        </visual>
-        <collision>
-            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
-            <geometry>
-                <cylinder radius="0.05165" length="0.0717"/>
-            </geometry>
-        </collision>
-        <inertial>
-            <mass value="0.83"/>
-            <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001"/>
-        </inertial>
-    </link>
-
     <joint name="rear_left_joint" type="continuous">
         <parent link="chassis"/>
         <child link="rear_left_wheel"/>
@@ -203,10 +181,60 @@
         <axis xyz= "0 1 0"/>
     </joint>
 
+    <link name="lidar_link">
+        <visual>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <cylinder radius="0.05165" length="0.0717"/>
+            </geometry>
+            <material name="Gray">
+                <color rgba="0.169 0.169 0.169 1"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <cylinder radius="0.05165" length="0.0717"/>
+            </geometry>
+        </collision>
+        <inertial>
+            <mass value="0.83"/>
+            <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001"/>
+        </inertial>
+    </link>
+
     <joint name="lidar_joint" type="fixed">
         <parent link="chassis"/>
         <child link="lidar_link"/>
         <origin xyz="-0.3 0.0 0.95" rpy="0.0 0.0 0.0"/>
+    </joint>
+
+    <link name="livox_lidar_link">
+        <visual>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <box size="0.115 0.077 0.0841"/>
+            </geometry>
+            <material name="Gray">
+                <color rgba="0.169 0.169 0.169 1"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <box size="0.115 0.077 0.0841"/>
+            </geometry>
+        </collision>
+        <inertial>
+            <mass value="1.18"/>
+            <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001"/>
+        </inertial>
+    </link>
+    
+    <joint name="livox_lidar_joint" type="fixed">
+        <parent link="chassis"/>
+        <child link="livox_lidar_link"/>
+        <origin xyz="0.055 0.0 0.74" rpy="0.0 0.0524 0.0"/>
     </joint>
 
     <link name="camera_link">

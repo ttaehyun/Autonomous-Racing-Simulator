@@ -71,6 +71,7 @@ def generate_launch_description():
             ['/', car_name, '/odom@nav_msgs/msg/Odometry[gz.msgs.Odometry'],
             ['/', car_name, '/joint_states@sensor_msgs/msg/JointState[gz.msgs.Model'],
             ['/', car_name, '/scan/points@sensor_msgs/msg/PointCloud2[gz.msgs.PointCloudPacked'],
+            ['/', car_name, '/livox/points@sensor_msgs/msg/PointCloud2[gz.msgs.PointCloudPacked'],
             ['/', car_name, '/camera/image_raw@sensor_msgs/msg/Image[gz.msgs.Image'],
             ['/', car_name, '/gps/fix@sensor_msgs/msg/NavSatFix[gz.msgs.NavSat'],
             '/clock@rosgraph_msgs/msg/Clock[gz.msgs.Clock'

@@ -20,10 +20,27 @@ class KeyTeleopNode(Node):
         self.timer = self.create_timer(0.05, self.timer_callback)
 
     def timer_callback(self):
-        if self.pressed_keys['w']: self.target_linear += 0.05
-        if self.pressed_keys['s']: self.target_linear -= 0.05
-        if self.pressed_keys['a']: self.target_steering += 0.1
-        if self.pressed_keys['d']: self.target_steering -= 0.1
+        if self.pressed_keys['w']: 
+            self.target_linear += 0.05
+        elif self.pressed_keys['s']: 
+            self.target_linear -= 0.05
+        else:
+            linear_decay = 0.1
+            if self.target_linear > 0.0:
+                self.target_linear = max(0.0, self.target_linear - linear_decay)
+            elif self.target_linear < 0.0:
+                self.target_linear = min(0.0, self.target_linear + linear_decay)
+
+        if self.pressed_keys['a']: 
+            self.target_steering += 0.1
+        elif self.pressed_keys['d']: 
+            self.target_steering -= 0.1
+        else:
+            steering_decay = 0.1
+            if self.target_steering > 0.0:
+                self.target_steering = max(0.0, self.target_steering - steering_decay)
+            elif self.target_steering < 0.0:
+                self.target_steering = min(0.0, self.target_steering + steering_decay)
 
         self.target_steering = max(min(self.target_steering, self.max_steering), -self.max_steering)
         self.target_linear = max(min(self.target_linear, self.max_velocity), -self.max_velocity)

@@ -89,6 +89,11 @@ python3 src/server/src/key_teleop.py
 ----
 
 ## Docker 이용
+### 호스트 컴퓨터 nvidia driver 설치
+```bash
+nvidia-smi
+```
+위 명령어 입력 시 터미널에 무언가 떠야함!!
 ### nvidia-container-toolkit install 필수 진행
 Click [here](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html)
 ### docker pull image
@@ -113,7 +118,7 @@ docker run -it --privileged \
     --env=LOCAL_USER_ID="$(id -u)" \
     --hostname $(hostname) \
     --network host \
-    --name ubuntu_24_04 rth0824/autonomous-racing-simulator:ver1.0 bash
+    --name ubuntu_24_04 rth0824/autonomous-racing-simulator:ver1.1 bash
 ```
 
 - **docker 실행 후 위 1번 부터 진행**

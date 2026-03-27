@@ -96,7 +96,7 @@ nvidia-smi
 ### 호스트 컴퓨터 bashrc에 xhost +local: 추가
 ```bash
 gedit ~/.bashrc
-xhost +local: ---> 추가
+xhost +local:
 ```
 위 명령어 입력 시 터미널에 무언가 떠야함!!
 ### nvidia-container-toolkit install 필수 진행

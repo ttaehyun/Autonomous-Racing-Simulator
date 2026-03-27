@@ -74,7 +74,11 @@ def generate_launch_description():
             ['/', car_name, '/livox/points@sensor_msgs/msg/PointCloud2[gz.msgs.PointCloudPacked'],
             ['/', car_name, '/camera/image_raw@sensor_msgs/msg/Image[gz.msgs.Image'],
             ['/', car_name, '/gps/fix@sensor_msgs/msg/NavSatFix[gz.msgs.NavSat'],
+            ['/model/', car_name, '/tf@tf2_msgs/msg/TFMessage[gz.msgs.Pose_V'],
             '/clock@rosgraph_msgs/msg/Clock[gz.msgs.Clock'
+        ],
+        remappings=[
+            (['/model/', car_name, '/tf'], '/tf')
         ],
         output='screen'
     )

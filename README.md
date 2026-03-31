@@ -87,6 +87,16 @@ ros2 launch server spawn_car.launch.py car_name:={원하는 이름} x_pos:={원�
 python3 src/server/src/key_teleop.py
 ```
 ----
+## Calibration
+### Spawn CheckerBot
+```bash
+ros2 launch server spawn_checkerboardbot.launch.py
+```
+**키보드 제어 실행**
+```bash
+python3 src/server/src/checkerbot_teleop.py
+```
+----
 
 ## Docker 이용
 ### 호스트 컴퓨터 nvidia driver 설치

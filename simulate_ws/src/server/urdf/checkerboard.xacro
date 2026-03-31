@@ -1,0 +1,248 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="checkerboard_bot">
+
+    <link name="checkerbot/base_link">
+        <visual>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <box size="0.4 0.4 0.1"/>
+            </geometry>
+            <material name="red">
+                <color rgba="0.8 0.0 0.0 1"/>
+            </material>   
+        </visual>
+        <collision>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <box size="0.4 0.4 0.1"/>
+            </geometry>
+        </collision>
+        <inertial>
+            <mass value="30.0"/>
+            <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.1"/>
+        </inertial>
+    </link>
+    <link name="checkerbot/pillar_link">
+        <visual>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <box size="0.05 0.05 0.5"/>
+            </geometry>
+            <material name="white">
+                <color rgba="1.0 1.0 1.0 1"/>
+            </material>   
+        </visual>
+        <collision>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <box size="0.05 0.05 0.5"/>
+            </geometry>
+        </collision>
+        <inertial>
+            <mass value="1.0"/>
+            <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.1"/>
+        </inertial>
+    </link>
+    <link name="checkerbot/rail_link">
+        <visual>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <box size="0.04 0.04 0.5"/>
+            </geometry>
+            <material name="white">
+                <color rgba="0.5 0.5 0.5 1"/>
+            </material>   
+        </visual>
+        
+        <inertial>
+            <mass value="1.0"/>
+            <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
+        </inertial>
+    </link>
+    <link name="checkerbot/wheel_left">
+        <visual>
+            <origin xyz="0.0 0.0 0.0" rpy="-1.5708 0.0 0.0"/>
+            <geometry>
+                <cylinder radius="0.08" length="0.04"/>  
+            </geometry>
+            <material name="black">
+                <color rgba="0.0 0.0 0.0 1"/>
+            </material>  
+        </visual>
+        <collision>
+            <origin xyz="0.0 0.0 0.0" rpy="-1.5708 0.0 0.0"/>
+            <geometry>
+                <cylinder radius="0.08" length="0.04"/>  
+            </geometry>
+        </collision>
+        <inertial>
+            <mass value="0.1"/>
+            <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.1"/>
+        </inertial>
+    </link>
+    <link name="checkerbot/wheel_right">
+        <visual>
+            <origin xyz="0.0 0.0 0.0" rpy="-1.5708 0.0 0.0"/>
+            <geometry>
+                <cylinder radius="0.08" length="0.04"/>  
+            </geometry>
+            <material name="black">
+                <color rgba="0.0 0.0 0.0 1"/>
+            </material>  
+        </visual>
+        <collision>
+            <origin xyz="0.0 0.0 0.0" rpy="-1.5708 0.0 0.0"/>
+            <geometry>
+                <cylinder radius="0.08" length="0.04"/>  
+            </geometry>
+        </collision>
+        <inertial>
+            <mass value="0.1"/>
+            <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.1"/>
+        </inertial>
+    </link>
+    <link name="checkerbot/caster_wheel">
+        <visual>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <sphere radius="0.03"/>
+            </geometry>
+            <material name="black">
+                <color rgba="0.0 0.0 0.0 1"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0.0 0.0 0.0" rpy="-1.5708 0.0 0.0"/>
+            <geometry>
+                <sphere radius="0.03"/>
+            </geometry>
+        </collision>
+        <inertial>
+            <mass value="0.1"/> 
+            <inertia ixx="0.0001" ixy="0" ixz="0" iyy="0.0001" iyz="0" izz="0.0001"/>
+        </inertial>
+    </link>
+
+    <link name="checkerbot/checkerboard_link">
+        <visual>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 -1.5708"/>
+            <geometry>
+                <mesh filename="file://$(find server)/mesh/black_checker.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+            <material name="black">
+                <color rgba="0.0 0.0 0.0 1"/>
+            </material> 
+        </visual>
+        <collision>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 -1.5708"/>
+            <geometry>
+                <mesh filename="file://$(find server)/mesh/black_checker.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+        </collision>
+        <visual>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 -1.5708"/>
+            <geometry>
+                <mesh filename="file://$(find server)/mesh/white_checker.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+            <material name="white">
+                <color rgba="1.0 1.0 1.0 1"/>
+            </material> 
+        </visual>
+        <collision>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 -1.5708"/>
+            <geometry>
+                <mesh filename="file://$(find server)/mesh/white_checker.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+        </collision>
+        <inertial>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 -1.5708"/>
+            <mass value="0.1"/>
+            <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
+        </inertial>
+    </link>
+    
+
+    <joint name="checkerbot/checkerboard_joint" type="continuous">
+        <parent link="checkerbot/rail_link"/>
+        <child link="checkerbot/checkerboard_link"/>
+
+        <origin xyz="0.03 0.0 0.25" rpy="0.0 -1.5708 0.0"/>
+        <axis xyz="0 0 1"/>
+        <dynamics damping="0.7" friction="0.5"/>
+    </joint>
+
+    <joint name="checkerbot/pillar_joint" type="fixed">
+        <parent link="checkerbot/base_link"/>
+        <child link="checkerbot/pillar_link"/>
+        <origin xyz="0.0 0.0 0.25" rpy="0.0 0.0 0.0"/>
+    </joint>
+    <joint name="checkerbot/rail_joint" type="prismatic">
+        <parent link="checkerbot/pillar_link"/>
+        <child link="checkerbot/rail_link"/>
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        <axis xyz="0 0 1"/> 
+        <limit lower="0" upper="0.5" effort="100" velocity="1.0"/>
+    </joint>
+    <joint name="checkerbot/wheel_left_joint" type="continuous">
+        <parent link="checkerbot/base_link"/>
+        <child link="checkerbot/wheel_left"/>
+        <origin xyz="0.1 0.22 0.0" rpy="0.0 0.0 0.0"/>
+        <axis xyz="0 1 0"/>
+    </joint>
+
+    <joint name="checkerbot/wheel_right_joint" type="continuous">
+        <parent link="checkerbot/base_link"/>
+        <child link="checkerbot/wheel_right"/>
+        <origin xyz="0.1 -0.22 0.0" rpy="0.0 0.0 0.0"/>
+        <axis xyz="0 1 0"/>
+    </joint>
+
+    <joint name="checkerbot/caster_joint" type="fixed">
+        <parent link="checkerbot/base_link"/>
+        <child link="checkerbot/caster_wheel"/>
+        <origin xyz="-0.15 0.0 -0.05" rpy="0.0 0.0 0.0"/>
+        <axis xyz="1 1 1"/>
+    </joint>
+
+    <gazebo>
+        <plugin filename="gz-sim-diff-drive-system" name="gz::sim::systems::DiffDrive">
+            <left_joint>checkerbot/wheel_left_joint</left_joint>
+            <right_joint>checkerbot/wheel_right_joint</right_joint>
+            <wheel_separation>0.44</wheel_separation>
+            <wheel_radius>0.08</wheel_radius>
+            
+            <topic>/checkerbot/cmd_vel</topic> 
+            <odom_topic>/checkerbot/odom</odom_topic>
+            
+            <frame_id>checkerbot/odom</frame_id>
+            <child_frame_id>checkerbot/base_link</child_frame_id>
+        </plugin>
+
+        <plugin filename="gz-sim-joint-position-controller-system" name="gz::sim::systems::JointPositionController">
+            <joint_name>checkerbot/rail_joint</joint_name>
+            <topic>/model/checkerboard_bot/joint/checkerbot/rail_joint/cmd_pos</topic>
+            <p_gain>10000</p_gain>
+            <i_gain>1</i_gain>
+            <d_gain>500</d_gain>
+        </plugin>
+
+        <plugin filename="gz-sim-joint-position-controller-system" name="gz::sim::systems::JointPositionController">
+            <joint_name>checkerbot/checkerboard_joint</joint_name>
+            <topic>/model/checkerboard_bot/joint/checkerbot/checkerboard_joint/cmd_pos</topic>
+            <p_gain>10</p_gain>
+            <i_gain>0.1</i_gain>
+            <d_gain>0</d_gain>
+        </plugin>
+
+        <plugin filename="gz-sim-joint-state-publisher-system" name="gz::sim::systems::JointStatePublisher">
+            <topic>/checkerbot/joint_states</topic>
+        </plugin>
+    </gazebo>
+        <gazebo reference="checkerbot/caster_wheel">
+        <mu1 value="0.001"/>
+        <mu2 value="0.001"/>
+        <kp value="1000000.0"/>
+        <kd value="10.0"/>
+    </gazebo>
+</robot>

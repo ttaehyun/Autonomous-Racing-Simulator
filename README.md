@@ -89,6 +89,7 @@ python3 src/server/src/key_teleop.py
 ----
 ## Calibration
 ### Spawn CheckerBot
+원하는 좌표 및 자세로 소환 가능 launch파일 내 x_pos, y_pos, z_pos, yaw 수정하면 됨
 ```bash
 ros2 launch server spawn_checkerboardbot.launch.py
 ```

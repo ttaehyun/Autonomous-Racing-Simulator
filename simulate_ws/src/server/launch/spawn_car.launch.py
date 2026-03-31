@@ -66,6 +66,7 @@ def generate_launch_description():
     bridge_node = Node(
         package='ros_gz_bridge',
         executable='parameter_bridge',
+        name= [car_name, '_bridge'],
         arguments=[
             ['/', car_name, '/cmd_vel@geometry_msgs/msg/Twist]gz.msgs.Twist'],
             ['/', car_name, '/odom@nav_msgs/msg/Odometry[gz.msgs.Odometry'],

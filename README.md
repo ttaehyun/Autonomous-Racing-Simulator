@@ -93,6 +93,11 @@ python3 src/server/src/key_teleop.py
 ```bash
 nvidia-smi
 ```
+### 호스트 컴퓨터 bashrc에 xhost +local: 추가
+```bash
+gedit ~/.bashrc
+xhost +local:
+```
 위 명령어 입력 시 터미널에 무언가 떠야함!!
 ### nvidia-container-toolkit install 필수 진행
 Click [here](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html)
@@ -110,6 +115,9 @@ docker pull rth0824/autonomous-racing-simulator:ver1.1
 docker run -it --privileged \
     --gpus all \
     -e DISPLAY=$DISPLAY \
+    -e NVIDIA_DRIVER_CAPABILITIES=all \
+    -e __NV_PRIME_RENDER_OFFLOAD=1 \
+    -e __GLX_VENDOR_LIBRARY_NAME=nvidia \
     -e __EGL_VENDOR_LIBRARY_FILENAMES=/usr/share/glvnd/egl_vendor.d/10_nvidia.json \
     --env="QT_X11_NO_MITSHM=1" \
     -v /tmp/.X11-unix:/tmp/.X11-unix \
